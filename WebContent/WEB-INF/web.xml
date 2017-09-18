@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	metadata-complete="true" version="3.0">
+	
+	<!-- 接收异步请求的Servlet -->
+	<servlet>
+		<servlet-name>ajax</servlet-name>
+		<servlet-class>cn.itcast.day22.servlet.AjaxServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ajax</servlet-name>
+		<url-pattern>/ajaxServlet</url-pattern>
+	</servlet-mapping>
+
+	<!-- 用户注册异步验证的Servlet -->
+	<servlet>
+		<servlet-name>regist</servlet-name>
+		<servlet-class>cn.itcast.day22.servlet.RegistServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>regist</servlet-name>
+		<url-pattern>/registServlet</url-pattern>
+	</servlet-mapping>
+
+	<!-- 用户注册异步验证的Servlet -->
+	<servlet>
+		<servlet-name>json</servlet-name>
+		<servlet-class>cn.itcast.day22.servlet.JsonServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>json</servlet-name>
+		<url-pattern>/jsonServlet</url-pattern>
+	</servlet-mapping>
+
+	<!-- 用户注册异步验证的Servlet -->
+	<servlet>
+		<servlet-name>search</servlet-name>
+		<servlet-class>cn.itcast.day22.servlet.BaiduServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>search</servlet-name>
+		<url-pattern>/baiduServlet</url-pattern>
+	</servlet-mapping>
+
+</web-app>
