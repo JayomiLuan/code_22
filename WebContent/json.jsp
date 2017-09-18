@@ -16,6 +16,6 @@
 			"name":"李四"
 		};
 	//应该是一个对象（[object Object]代表自定义对象）
-	alert( user.name );
+	alert( user.name+'-->'+user.id);
 
 </script>

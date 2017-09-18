@@ -1,14 +1,13 @@
 package cn.itcast.day22.servlet;
 
-import java.io.IOException;
+import cn.itcast.day22.service.SearchService;
+import cn.itcast.day22.service.impl.SearchServiceImpl;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import cn.itcast.day22.service.SearchService;
-import cn.itcast.day22.service.impl.SearchServiceImpl;
+import java.io.IOException;
 
 public class BaiduServlet extends HttpServlet {
 
@@ -17,8 +16,11 @@ public class BaiduServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		//接收请求参数
-		String keyword = req.getParameter("keyword");
-		
+		String keyword;
+		keyword = req.getParameter("keyword");
+
+		keyword = new String(keyword.getBytes("ISO-8859-1"),"UTF-8");
+
 		//调用业务逻辑，返回跟传入关键字相关的推荐信息
 		String result = null;
 		try {
