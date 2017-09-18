@@ -1,15 +1,14 @@
 package cn.itcast.day22.servlet;
 
-import java.io.IOException;
-import java.io.PrintWriter;
+import cn.itcast.day22.service.RegistService;
+import cn.itcast.day22.service.impl.RegistServiceImpl;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import cn.itcast.day22.service.RegistService;
-import cn.itcast.day22.service.impl.RegistServiceImpl;
+import java.io.IOException;
+import java.io.PrintWriter;
 
 public class RegistServlet extends HttpServlet {
 
@@ -26,8 +25,8 @@ public class RegistServlet extends HttpServlet {
 			flag = registService.isUsernameExist(username);
 		} catch (Exception e) {
 			e.printStackTrace();
-		}
-		
+
+	}
 		PrintWriter out = resp.getWriter();
 		//发送响应信息到客户端浏览器
 		if( flag ){
